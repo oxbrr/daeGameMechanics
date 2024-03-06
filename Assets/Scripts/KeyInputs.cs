@@ -36,5 +36,6 @@ public class KeyInputs : MonoBehaviour
         {
             myRigidbody.velocity = new Vector2(0, myRigidbody.velocity.y);
         }
+
     }
 }

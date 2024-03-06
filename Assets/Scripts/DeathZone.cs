@@ -3,20 +3,22 @@ using UnityEngine;
 public class BoundaryController : MonoBehaviour
 {
     public Collider2D boundaryCollider;
+    public float damageAmount = 10f; // Amount of damage to apply when a player touches the boundary
 
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // Get all colliders within the boundary
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(boundaryCollider.bounds.center, boundaryCollider.bounds.size, 0f);
-
-        // Iterate through all colliders and check if they are on the "Player" layer
-        foreach (Collider2D collider in colliders)
+        // Check if the collider belongs to a GameObject with the "Player" layer
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            // Access the PlayerHealth script attached to the player GameObject (assuming it has one)
+            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+
+            // If the player has a PlayerHealth script attached, apply damage to the player
+            if (playerHealth != null)
             {
-                // If the collider is on the "Player" layer, remove or disable the GameObject
-                collider.gameObject.SetActive(false);
+                playerHealth.TakeDamage(10); // Call a function to apply damage to the player
             }
         }
     }
 }
+    

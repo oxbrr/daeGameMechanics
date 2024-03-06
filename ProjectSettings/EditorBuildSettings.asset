@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Debug Room.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0e6f2fa9fc45b46d9adb6844e072c272
+  - enabled: 1
+    path: Assets/Scenes/DeathMenu.unity
+    guid: 4ea0185e7d28f423eb8d0314607f7560
   m_configObjects: {}

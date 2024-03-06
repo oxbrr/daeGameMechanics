@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public GameObject leftFist;
     public GameObject rightFist;
     public float fistRotationSpeed = 10f;
+    public float fistDamage = 5;
 
     void Update()
     {
@@ -21,5 +22,11 @@ public class PlayerController : MonoBehaviour
         // Rotate the fists to point towards the mouse
         leftFist.transform.rotation = Quaternion.Slerp(leftFist.transform.rotation, Quaternion.Euler(0f, 0f, angle), Time.deltaTime * fistRotationSpeed);
         rightFist.transform.rotation = Quaternion.Slerp(rightFist.transform.rotation, Quaternion.Euler(0f, 0f, angle), Time.deltaTime * fistRotationSpeed);
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Player Attacked");
+        }
+
     }
 }
