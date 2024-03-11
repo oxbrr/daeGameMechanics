@@ -599,7 +599,12 @@ MonoBehaviour:
   leftFist: {fileID: 9057119827035881390}
   rightFist: {fileID: 2266234071306905770}
   fistRotationSpeed: 15
-  fistDamage: 5
+  fistDamage: 20
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  LeftHitbox: {fileID: 2748354879735795604}
+  RightHitbox: {fileID: 4177754664321952390}
 --- !u!114 &-4381039557813264805
 MonoBehaviour:
   m_ObjectHideFlags: 0

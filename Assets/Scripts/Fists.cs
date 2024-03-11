@@ -5,10 +5,20 @@ public class PlayerController : MonoBehaviour
     public GameObject leftFist;
     public GameObject rightFist;
     public float fistRotationSpeed = 10f;
-    public float fistDamage = 5;
+    public float fistDamage = 20;
+    public LayerMask enemyLayer;
+    public Collider2D LeftHitbox;
+    public Collider2D RightHitbox;
+    public KeyCode attackKey = KeyCode.Mouse0;
 
-    void Update()
+    private void Update()
     {
+        // Check for mouse click
+        if (Input.GetKeyDown(attackKey))
+        {
+            Attack(leftFist, LeftHitbox);
+            Attack(rightFist, RightHitbox);
+        }
         // Get the mouse position in the world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; // Ensure the mouse position is at the same z-coordinate as the player
@@ -22,11 +32,34 @@ public class PlayerController : MonoBehaviour
         // Rotate the fists to point towards the mouse
         leftFist.transform.rotation = Quaternion.Slerp(leftFist.transform.rotation, Quaternion.Euler(0f, 0f, angle), Time.deltaTime * fistRotationSpeed);
         rightFist.transform.rotation = Quaternion.Slerp(rightFist.transform.rotation, Quaternion.Euler(0f, 0f, angle), Time.deltaTime * fistRotationSpeed);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+    private void Attack(GameObject fist, Collider2D hitbox)
+    {
+        // Activate the hitbox collider
+        hitbox.enabled = true;
+
+        // Schedule deactivation after a short delay
+        Invoke("DeactivateHitbox", 0.1f);
+
+        // Check for collisions during the attack
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0f, enemyLayer);
+        foreach (Collider2D collider in colliders)
         {
-            Debug.Log("Player Attacked");
-        }
+            // Assuming your enemies have a health script
+            EnemyHealth enemyHealth = collider.GetComponent<EnemyHealth>();
 
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(fistDamage);
+            }
+        }
+    }
+
+    private void DeactivateHitbox()
+    {
+        // Deactivate both hitboxes after the attack
+        LeftHitbox.enabled = false;
+        RightHitbox.enabled = false;
     }
 }
