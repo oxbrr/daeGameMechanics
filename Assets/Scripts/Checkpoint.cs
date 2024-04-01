@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
     void OnTriggerExit2d(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
+        {       
             CurrentRespawnPoint = transform.position;
         }
     }

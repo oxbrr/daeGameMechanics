@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealth; // Current health of the enemy
     public GameObject Enemy;
 
-    void Start()
+    void Start() 
     {
         currentHealth = maxHealth; // Initialize current health to max health at the start
     }
@@ -18,18 +18,19 @@ public class EnemyHealth : MonoBehaviour
         // Subtract the damage amount from the current health
         currentHealth -= damageAmount;
 
-        // Check if the player's health is zero or below
+        // Check if the enemies' health is zero or below
         if (currentHealth <= 0)
         {
             Die(); // Call the Die function if the player's health is zero or below
         }
     }
 
-    // Function to handle player death
+    // Function to handle enemy death
     void Die()
     {
-        // Perform actions to handle player death, such as playing death animations, sounds, etc.
+        // Perform actions to handle enemy death, such as playing death animations, sounds, etc.
         Debug.Log("Enemy has died!");
+
         Destroy(Enemy);
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth = 100f; // Maximum health of the player
+    public float maxHealth = 10f; // Maximum health of the player
     private float currentHealth; // Current health of the player
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth; // Initialize current health to max health at the start
     }

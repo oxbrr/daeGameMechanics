@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
             Attack(leftFist, LeftHitbox);
             Attack(rightFist, RightHitbox);
         }
+        // this part is for the fists tracking the cursor
         // Get the mouse position in the world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; // Ensure the mouse position is at the same z-coordinate as the player
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapBoxAll(hitbox.bounds.center, hitbox.bounds.size, 0f, enemyLayer);
         foreach (Collider2D collider in colliders)
         {
-            // Assuming your enemies have a health script
+            // Get Enemy Health script so you can actually kill them
             EnemyHealth enemyHealth = collider.GetComponent<EnemyHealth>();
 
             if (enemyHealth != null)

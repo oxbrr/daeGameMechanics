@@ -605,6 +605,7 @@ MonoBehaviour:
     m_Bits: 256
   LeftHitbox: {fileID: 2748354879735795604}
   RightHitbox: {fileID: 4177754664321952390}
+  attackKey: 323
 --- !u!114 &-4381039557813264805
 MonoBehaviour:
   m_ObjectHideFlags: 0
