@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     // This is the place in the world where you want to spawn the object. Assign it in Unity Editor.
     public Transform spawnPoint;
     // Start is called before the first frame update
-    void FixedUpdate()
+    void Start()
     {
         SpawnObject();
     }

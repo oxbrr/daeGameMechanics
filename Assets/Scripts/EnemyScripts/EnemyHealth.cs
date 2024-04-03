@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealth; // Current health of the enemy
     public GameObject Enemy;
 
-    void Start() 
+    void Awake() 
     {
         currentHealth = maxHealth; // Initialize current health to max health at the start
     }

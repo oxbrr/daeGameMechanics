@@ -37,4 +37,10 @@ public class MenuButtons : MonoBehaviour
         Debug.Log("Sent to Debug Room");
         SceneManager.LoadScene("Debug Room");
     }
+
+    public void DEBUGRetryButtonClicked()
+    {
+        Debug.Log("Retried Debug Room");
+        SceneManager.LoadScene("Debug Room");
+    }
 }

@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 141418379}
   - component: {fileID: 141418378}
   - component: {fileID: 141418377}
+  - component: {fileID: 141418380}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -276,6 +277,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1053989525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141418380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141418376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd25bfce825064581a315e9c3bc4cebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryCollider: {fileID: 141418378}
+  damageAmount: 1000
 --- !u!1 &245192854
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +577,7 @@ GameObject:
   - component: {fileID: 728604932}
   - component: {fileID: 728604931}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: SingleEnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -768,7 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116465019}
   m_Layer: 0
-  m_Name: EnemySpawn
+  m_Name: SingleEnemySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,6 +941,7 @@ GameObject:
   - component: {fileID: 1399321014}
   - component: {fileID: 1399321013}
   - component: {fileID: 1399321012}
+  - component: {fileID: 1399321015}
   m_Layer: 0
   m_Name: DeathZone (1)
   m_TagString: Untagged
@@ -1007,6 +1023,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1053989525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399321015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399321011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd25bfce825064581a315e9c3bc4cebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryCollider: {fileID: 1399321013}
+  damageAmount: 1000
 --- !u!1001 &1472682535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1145,6 +1175,7 @@ GameObject:
   - component: {fileID: 2006343496}
   - component: {fileID: 2006343495}
   - component: {fileID: 2006343494}
+  - component: {fileID: 2006343497}
   m_Layer: 0
   m_Name: DeathZone (2)
   m_TagString: Untagged
@@ -1226,6 +1257,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1053989525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2006343497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006343493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd25bfce825064581a315e9c3bc4cebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundaryCollider: {fileID: 2006343495}
+  damageAmount: 1000
 --- !u!1001 &2099800083
 PrefabInstance:
   m_ObjectHideFlags: 0

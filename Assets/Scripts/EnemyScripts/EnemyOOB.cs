@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BoundaryController : MonoBehaviour
+public class EnemyBoundaryController : MonoBehaviour
 {
     public Collider2D boundaryCollider;
     public float damageAmount;
@@ -14,15 +14,15 @@ public class BoundaryController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the collider belongs to a GameObject with the "Player" layer
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            // Access the PlayerHealth script attached to the player GameObject
-            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            // Access the EnemyHealth script attached to the enemy GameObject
+            EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
 
             // If the player has a PlayerHealth script attached, apply damage to the player
-            if (playerHealth != null)
+            if (enemyHealth != null)
             {
-                playerHealth.TakeDamage(damageAmount); // Call a function to apply damage to the player
+                enemyHealth.TakeDamage(damageAmount); // Call a function to apply damage to the player
             }
         }
     }
